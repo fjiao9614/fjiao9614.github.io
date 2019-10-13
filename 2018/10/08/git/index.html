@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>git 学习笔记 - 姣姣的个人主页</title>
+
+
+    <meta name="description" content="这里是笔记摘要：廖雪峰的Git教程：史上最浅显易懂的Git教程！本教程面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/10/08/git/index.html">
+<meta property="og:site_name" content="姣姣的个人主页">
+<meta property="og:description" content="这里是笔记摘要：廖雪峰的Git教程：史上最浅显易懂的Git教程！本教程面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-13T11:53:07.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git 学习笔记">
+<meta name="twitter:description" content="这里是笔记摘要：廖雪峰的Git教程：史上最浅显易懂的Git教程！本教程面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="git 学习笔记" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/fjiao9614/fjiao9614.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-07T16:00:00.000Z">2018-10-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/☎-经验积累/">☎ 经验积累</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/☎-经验积累/其他/">其他</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    26 minutes read (About 3901 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                git 学习笔记
+            
+        </h1>
+        <div class="content">
+            <p> 这里是笔记摘要：廖雪峰的Git教程：史上最浅显易懂的Git教程！本教程面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。</p>
+<a id="more"></a>
+
+
+<h2 id="Github学习笔记"><a href="#Github学习笔记" class="headerlink" title="Github学习笔记"></a>Github学习笔记</h2><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的Git教程：史上最浅显易懂的Git教程！</a></p>
+<h3 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h3><ul>
+<li><p><strong>集中式版本控制系统：</strong> 版本库集中存放在中央服务器，工作时要先从中央服务器取得最新的版本，工作结束后把自己的工作推送给中央服务器。</p>
+</li>
+<li><p>缺点:* 必须联网才能工作。</p>
+</li>
+<li><p><strong>分布式版本控制系统：</strong> 分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，所以不需要联网。  </p>
+</li>
+<li><p>多人协作：* 比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+</li>
+</ul>
+<h3 id="Git安装及配置"><a href="#Git安装及配置" class="headerlink" title="Git安装及配置"></a>Git安装及配置</h3><p>Linux <strong>安装Git</strong> 的命令：<code>sudo apt-get install git</code><br>Git <strong>设置用户名和email地址</strong>的命令：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong><code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><ul>
+<li><p><strong>初始化</strong>一个Git仓库，在该目录下使用<code>git init</code><br>当前目录下多了一个<code>.git</code>的目录，这个目录是Git来跟踪管理版本库的,<br>默认是隐藏的，用<code>ls -ah</code>命令就可以看见。</p>
+</li>
+<li><p>添加文件到Git仓库，分两步：  </p>
+<blockquote>
+<ul>
+<li>使用命令<code>git add &lt;file&gt;</code>，<strong>注意</strong>:可反复多次使用，添加多个文件；</li>
+<li>使用命令<code>git commit -m &lt;message&gt;</code>，完成。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><ul>
+<li><p><code>git status</code>命令可以让我们时刻掌握仓库当前的状态</p>
+</li>
+<li><p><code>git diff</code>查看上次修改的具体内容</p>
+</li>
+<li><p><code>git reset --hard HEAD^</code>,回退到上一个版本</p>
+<blockquote>
+<p>HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+</blockquote>
+</li>
+<li><p><code>git reset --hard commit_id</code>,在版本的历史之间穿梭</p>
+<blockquote>
+<p>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。<br>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><ul>
+<li>Git的版本库：工作区有一个隐藏目录.git。<blockquote>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3><ul>
+<li>文件添加到Git版本库<blockquote>
+<ul>
+<li><code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；  </li>
+<li><code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>因为我们创建Git版本库时，Git自动为我们创建了<strong>唯一一个</strong>master分支，所以<code>git commit</code>就是往<code>master</code>分支上提交更改。<br>可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。一旦提交后，如果你又没有对工作区做任何修改，那么工作区就是“干净”的：</p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><ul>
+<li><code>git diff HEAD -- &lt;file&gt;</code>提交后用该命令可以查看工作区和版本库里面最新版本的区别</li>
+<li><code>git checkout -- &lt;file&gt;</code>，把<code>&lt;file&gt;</code>文件在工作区的修改全部撤销，这里有两种情况：<blockquote>
+<ul>
+<li><code>&lt;file&gt;</code>自修改后还没有被放到暂存区，现在撤销修改就回到和版本库一模一样的状态；</li>
+<li><code>&lt;file&gt;</code>已经添加到暂存区后，又作了修改，现在撤销修改就回到添加到暂存区后的状态。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>总之，就是让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。<br><strong>注意：</strong> <code>git checkout -- file</code>命令中的<code>--</code>很重要，没有<code>--</code>，就变成了“切换到另一个分支”的命令</p>
+<ul>
+<li><code>git reset HEAD &lt;file&gt;</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区</li>
+<li><code>git reset</code>命令既可以回退版本，也可以把暂存区的修改回退到工作区。</li>
+</ul>
+<p><strong>小结：</strong> </p>
+<blockquote>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。<br>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
+</blockquote>
+<h3 id="删除修改"><a href="#删除修改" class="headerlink" title="删除修改"></a>删除修改</h3><ul>
+<li>先手动删除文件(工作区删除）,然后从版本库中删除该文件，并且<code>git commit</code><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ rm &quot;filename&quot;</span><br><span class="line">$ git rm &lt;file&gt;</span><br><span class="line">$ git commit -m &quot;remove ...&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>小提示：</strong> 先手动删除文件，然后使用<code>git rm &lt;file&gt;</code>和<code>git add&lt;file&gt;</code>效果是一样的。</p>
+<ul>
+<li><p>删错了版本库中有，所以可以很轻松地把误删的文件恢复到最新版本：</p>
+</li>
+<li><p><code>$ git checkout -- &lt;file&gt;</code><br><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+</li>
+</ul>
+<p><strong>小结：</strong> 命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h3><ul>
+<li>要关联一个远程库,本地的learngit仓库下运行命令：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@server-name:path/repo-name.git</span><br><span class="line">// $ git remote add origin git@github.com:fujiao9614/fujiao9614.github.io.git</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>添加后，远程库的名字就是<code>origin</code>，这是Git默认的叫法，也可以改成别的.</p>
+<ul>
+<li>下一步，就可以把本地库的所有内容推送到远程库上：<blockquote>
+<p>把本地库的内容推送到远程，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容.<br>由于远程库是空的，我们第一次推送master分支时，加上了<code>-u</code>参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>从现在起，只要本地作了提交，就可以通过命令：<br><code>$ git push origin master</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h3><p>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。<br>Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。<br><code>$ git clone git@server-name:path/repo-name.git</code></p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建合并分支"><a href="#创建合并分支" class="headerlink" title="创建合并分支"></a>创建合并分支</h3><ul>
+<li>查看分支：git branch</li>
+<li>创建分支：git branch <name></name></li>
+<li>切换分支：git checkout <name> </name></li>
+<li>创建+切换分支：git checkout -b <name></name></li>
+<li>合并某分支到当前分支：git merge <name></name></li>
+<li>删除分支：git branch -d <name></name></li>
+</ul>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><ul>
+<li>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</li>
+<li><code>git log --graph</code>命令可以看到分支合并图。<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="分支管理-1"><a href="#分支管理-1" class="headerlink" title="分支管理"></a>分支管理</h3><ul>
+<li><p>Git分支十分强大，在团队开发中应该充分应用。<br><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</code><br>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并</p>
+</li>
+<li><p><code>$ git stash</code>，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：<br><code>git stash list</code>查看stash内容</p>
+<blockquote>
+<ul>
+<li>一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；</li>
+<li>另一种方式是用git stash pop，恢复的同时把stash内容也删了：<br>多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：<br><code>$ git stash apply stash@{0}</code></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="Bug分支和feature分支"><a href="#Bug分支和feature分支" class="headerlink" title="Bug分支和feature分支"></a>Bug分支和feature分支</h3><ul>
+<li><p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；<br>当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场。</p>
+</li>
+<li><p>开发一个新feature，最好新建一个分支；如果要删除Git会提示：新分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数。<br>因此丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除。</p>
+</li>
+</ul>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><ul>
+<li><p><code>git remote</code>查看远程库信息;<br><code>git remote -v</code>会显示更详细的信息，例如抓取和推送的origin的地址。（如果没有推送权限，就看不到push的地址。）</p>
+</li>
+<li><p>多人协作的模式：</p>
+<blockquote>
+<ul>
+<li>首先，可以试图用<code>git push origin &lt;branch-name&gt;</code>推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用<code>git push origin &lt;branch-name&gt;</code>推送就能成功！</li>
+<li>如果``git pull<code>提示</code>no tracking information<code>，则说明本地分支和远程分支的链接关系没有创建，用命令</code>git branch –set-upstream-to <branch-name> origin/<branch-name>`。</branch-name></branch-name></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><strong>小结：</strong></p>
+<ul>
+<li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li>
+<li>从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交；</li>
+<li>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致；</li>
+<li>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；</li>
+<li>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。</li>
+</ul>
+<h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a><a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA" target="_blank" rel="noopener">rebase</a></h3><ul>
+<li>merge的过程<br>它会把两个分支的最新快照（C3 和 C4）以及二者最近的共同祖先（C2）进行三方合并，合并的结果是生成一个新的快照（并提交）。</li>
+</ul>
+<p><img src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" alt="普通merge"></p>
+<ul>
+<li>rebase <blockquote>
+<ul>
+<li>合并操作来整合分叉rebase<br>提取在C4中引入的补丁和修改-&gt;C4‘，然后在C3的基础上应用一次C3+C4’-&gt;C5。 在Git中，这种操作就叫做变基。<br>在上面这个例子中，第一步将 C4 中的修改变基到 C3 上，在experiment进行一次快进模式合并（Fast-forward）：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ git checkout experiment</span><br><span class="line">&gt;$ git rebase master</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png" alt="第一步"></p>
+<p>第二步：回到 master 分支，进行一次快进模式（Fast-forward）</p>
+<blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ git checkout master</span><br><span class="line">&gt;$ git merge experiment</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://git-scm.com/book/en/v2/images/basic-rebase-4.png" alt="第二步"></p>
+<blockquote>
+<p>此时，C4’ 指向的快照就和上面使用 merge 命令的例子中 C5 指向的快照一模一样了。 这两种整合方法的最终结果没有任何区别，但是变基使得提交历史更加整洁。 你在查看一个经过变基的分支的历史记录时会发现，尽管实际的开发工作是并行的，但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<ul>
+<li>rebase操作可以把本地未push的分叉提交历史整理成直线；</li>
+<li>rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。</li>
+</ul>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><ul>
+<li><code>git tag &lt;tagname&gt;</code>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</li>
+<li><code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code>可以指定标签信息；</li>
+<li><code>git tag</code>可以查看所有标签</li>
+<li><code>git show &lt;tagname&gt;</code>可以看到说明文字</li>
+<li><code>git push origin &lt;tagname&gt;</code>可以推送一个本地标签；</li>
+<li><code>git push origin --tags</code>可以推送全部未推送过的本地标签；</li>
+<li><code>git tag -d &lt;tagname&gt;</code>可以删除一个本地标签；</li>
+<li><code>git push origin :refs/tags/&lt;tagname&gt;</code>可以删除一个远程标签。</li>
+</ul>
+<p><strong>注意：</strong> 标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</p>
+<p><strong>提示：</strong><br>在GitHub上，可以任意Fork开源仓库；<br>自己拥有Fork后的仓库的读写权限；<br>可以推送pull request给官方仓库来贡献代码。<br>先Fork，然后clone到本地。</p>
+<h3 id="补充：使用GitHub挂载网站"><a href="#补充：使用GitHub挂载网站" class="headerlink" title="补充：使用GitHub挂载网站"></a>补充：使用GitHub挂载网站</h3><p><a href="https://help.github.com/categories/github-pages-basics/" target="_blank" rel="noopener">官方文档参考</a></p>
+<p>使用GitHub挂载其实是使用了GitHub Pages的功能</p>
+<p>GitHub Pages有两种用法：</p>
+<ul>
+<li><p>如果你的仓库名为<code>用户名.github.io</code>的话，会自动开启GitHub Pages功能，且所有提交到master分支的代码，会当做网站内容被挂载起来，且网站访问地址为<br><code>http://用户名.github.io</code></p>
+</li>
+<li><p>第二种用法，可以手动指定一个仓库的master分支，或者master分支下的/docs目录，或者gh-pages分支为网站的根目录，其下的内容为网站内容，此方法需要在仓库设置里手动开启GitHub Pages功能，并指定网站挂载方式。<br>用第二种方法的话，挂载之后的服务器地址，在设置之后会显示在后台.</p>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/git/">git</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/24/Java_38-41_线程常用方法与实战/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Chapter 38-41 线程常用操作方法</span>
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="fjiao">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        fjiao
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        姣姣的个人主页
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>BeiJing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        24
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        6
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/fjiao9614/fjiao9614.github.io" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/fjiao9614">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/fjiao9614" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Hexo-入门/">
+            <span class="level-start">
+                <span class="level-item">Hexo 入门</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Java8-编程开发入门笔记/">
+            <span class="level-start">
+                <span class="level-item">Java8 编程开发入门笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">18</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Linux-学习/">
+            <span class="level-start">
+                <span class="level-item">Linux 学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/☎-经验积累/">
+            <span class="level-start">
+                <span class="level-item">☎ 经验积累</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/☎-经验积累/其他/">
+            <span class="level-start">
+                <span class="level-item">其他</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/调研报告/">
+            <span class="level-start">
+                <span class="level-item">调研报告</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/调研/" style="font-size: 10px;">调研</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/13/测试图片/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T12:53:36.876Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/测试图片/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/13/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T07:35:23.893Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Linux常用命令/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linux 常用命令">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Linux常用命令/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux 常用命令</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Linux-学习/">Linux 学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Hexo/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hexo 学习笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo-入门/">Hexo 入门</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Java_56_类集框架/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Chapter 56 类集框架">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Java_56_类集框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 56 类集框架</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/调研/">
+                        <span class="tag">调研</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/13/测试图片/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T12:53:36.876Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/测试图片/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/13/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T07:35:23.893Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Linux常用命令/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linux 常用命令">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Linux常用命令/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux 常用命令</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Linux-学习/">Linux 学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Hexo/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hexo 学习笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo-入门/">Hexo 入门</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/Java_56_类集框架/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Chapter 56 类集框架">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/Java_56_类集框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 56 类集框架</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/调研/">
+                        <span class="tag">调研</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="git 学习笔记" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 fjiao&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/fjiao9614/fjiao9614.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
