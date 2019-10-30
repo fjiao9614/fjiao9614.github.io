@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Category: Java8 编程开发入门笔记 - 姣姣的个人主页</title>
+<title>Tag: Spring - 姣姣的个人主页</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="姣姣的个人主页">
-<meta property="og:url" content="http://yoursite.com/categories/Java8-编程开发入门笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Spring/index.html">
 <meta property="og:site_name" content="姣姣的个人主页">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -129,9 +129,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">Java8 编程开发入门笔记</a></li>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Spring</a></li>
         </ul>
         </nav>
     </div>
@@ -144,17 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-10-21T03:19:06.999Z">2019-10-21</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    29 minutes read (About 4276 words)
+                    3 minutes read (About 396 words)
                 </span>
                 
                 
@@ -163,21 +158,40 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/05/Java_56_类集框架/">Chapter 56 类集框架</a>
+                <a class="has-link-black-ter" href="/2019/10/21/Spring笔记/">[object Object]</a>
             
         </h1>
         <div class="content">
-            <p>类集就是 Java 数据结构的实现，类集就是动态对象数组。</p>
+            <h3 id="优良特性"><a href="#优良特性" class="headerlink" title="优良特性"></a>优良特性</h3><ol>
+<li>依赖注入（DI-Depenfency Injection），反转控制的最经典表现</li>
+<li>面向切面编程 AOP-Aspect Oriented Programming</li>
+<li>一站式，在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库</li>
+</ol>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
+<li><p>IOC-Inversion of Control 反转控制</p>
+<p><strong>传统</strong>：应用程序的组件获取资源时，组件主动从容器中获取所需要的资源，因此需要知道在特定容器如何创建资源对象</p>
+<p><strong>反转控制的思想</strong>：反转资源的获取方向，容器主动的将资源推给需要的组建，因此不需要知道如何创建资源对象，只需要提供接收资源的方式</p>
+</li>
+<li><p>DI-Dependency Inject 依赖注入</p>
+<p>IOC的另一种表述方式，组件以一些预先定义好的方式(例如setter方法)接收来自容器的注入。IOC是一种思想，DI是IOC思想的具体实现。</p>
+</li>
+</ol>
+<h3 id="注解标识组件"><a href="#注解标识组件" class="headerlink" title="注解标识组件"></a>注解标识组件</h3><ol>
+<li>普通组件 @Component：标识一个受Spring IOC容器管理的普通组件</li>
+<li>持久化层组件 @Repository</li>
+<li>业务逻辑层组件：@Service</li>
+<li>表示层控制器组件：@Controller</li>
+</ol>
+<p>Spring没有能力标识一个组件是不是它标记的类型，将@Service注解用在一个表示层控制器组件也不会出错，所以@Repository、@Service、@Controller仅仅是为了让开发人员明确当前组件的角色。</p>
+<p>###组件装配</p>
+<ol>
+<li>@Autowired 注解</li>
+<li>@Resource 注解</li>
+<li>@Inject 注解</li>
+</ol>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/05/Java_56_类集框架/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -190,502 +204,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    28 minutes read (About 4132 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/05/Java_57_Java数据库编程_JDBC/">Chapter 57 类集框架</a>
-            
-        </h1>
-        <div class="content">
-            <p>Java 数据库编程，JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。<br>数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/05/Java_57_Java数据库编程_JDBC/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    an hour read (About 8208 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/05/Java_58_DAO设计模式_分层设计思想/">Chapter 58 DAO设计模式_分层设计思想</a>
-            
-        </h1>
-        <div class="content">
-            <p>DAO设计模式_分层设计思想，业务层与数据层的开发。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/05/Java_58_DAO设计模式_分层设计思想/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1223 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_48_国际化/">Chapter 48 国际化</a>
-            
-        </h1>
-        <div class="content">
-            <p>国际化程序的实现</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_48_国际化/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1770 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_46_正则表达式/">Chapter 46 正则表达式</a>
-            
-        </h1>
-        <div class="content">
-            <p>学会使用正则表达式，正则表达式在 String 类型数据的应用</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_46_正则表达式/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1773 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_45_比较器/">Chapter 45 比较器</a>
-            
-        </h1>
-        <div class="content">
-            <p>学习使用比较器 Comparable 接口。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_45_比较器/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 minutes read (About 1703 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_49_文件操作类/">Chapter 49 文件操作类</a>
-            
-        </h1>
-        <div class="content">
-            <p>进行所有的文件或者文件内容的开发操作</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_49_文件操作类/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 minutes read (About 1895 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_47_反射机制/">Chapter 47 反射机制</a>
-            
-        </h1>
-        <div class="content">
-            <p>认识反射机制，反射实例化对象，使用反射调用构造，反射调用方法举例</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_47_反射机制/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1214 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_51_IO辅助概念/">Chapter 51 IO 辅助概念</a>
-            
-        </h1>
-        <div class="content">
-            <p>字符编码和内存流的介绍。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_51_IO辅助概念/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 minutes read (About 2003 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/24/Java_42_Java基础类库/">Chapter 42 Java 基础类库</a>
-            
-        </h1>
-        <div class="content">
-            <p>学习 StringBuffer 类、Runtime 类、System 类与对象克隆的基本概念和举例。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/24/Java_42_Java基础类库/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
-<div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java8-编程开发入门笔记/page/0/">Previous</a>
-        </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java8-编程开发入门笔记/page/2/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/categories/Java8-编程开发入门笔记/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Java8-编程开发入门笔记/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
-</div>
 </div>
                 
 

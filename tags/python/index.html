@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Category: git使用 - 姣姣的个人主页</title>
+<title>Tag: python - 姣姣的个人主页</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="姣姣的个人主页">
-<meta property="og:url" content="http://yoursite.com/categories/git使用/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/python/index.html">
 <meta property="og:site_name" content="姣姣的个人主页">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -129,9 +129,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">git使用</a></li>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">python</a></li>
         </ul>
         </nav>
     </div>
@@ -144,17 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-07T16:00:00.000Z">2018-10-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/git使用/">git使用</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-10-29T08:37:50.850Z">2019-10-29</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    26 minutes read (About 3901 words)
+                    3 minutes read (About 426 words)
                 </span>
                 
                 
@@ -163,21 +158,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/10/08/git/">git 学习笔记</a>
+                <a class="has-link-black-ter" href="/2019/10/29/python的主函数main的作用/">[object Object]</a>
             
         </h1>
         <div class="content">
-            <p> 这里是笔记摘要：廖雪峰的Git教程：史上最浅显易懂的Git教程！本教程面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。</p>
+            <h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><code>__name__</code> 是当前模块名，通过程序入口main函数,当模块被直接运行时模块名为 <code>__main__</code>。当模块被直接运行时，代码将被运行，当模块是被导入时，代码不被运行</p>
+<p><code>if __name__ == &#39;main&#39;</code>语句的含义：</p>
+<p>Make a script both importable and executable。使脚本模块即可以被导入到别的模块中，也可以自己执行</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>在test.py中写以下代码：</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="hljs-string">"start"</span>)</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span></span><br><span class="line">  print(<span class="hljs-string">"main 函数执行"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">  main()</span><br><span class="line">  print(<span class="hljs-string">'end'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出为：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start </span><br><span class="line">main 函数执行</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>如果在别的文件中导入该模块，新建 import_test.py，输入<code>import test</code>，运行后输出 <code>start</code>，<code>__name__ == &#39;__main__&#39;</code>没有执行</p>
+<p><strong>原理解读</strong>： 每个python模块（python文件）都包含内置的变量<code>__name__</code>，当运行模块被执行的时候，<code>__name__</code>等于文件名（包含了后缀.py）。如果import到其他模块中，则<code>__name__</code>等于模块名称（不包含后缀.py）。而<code>__main__</code>等于当前执行文件的名称（包含了后缀.py）。所以当模块被直接执行时，<code>__name__ == &#39;__main__&#39;</code>结果为真；而当模块被import到其他模块中时，<code>__name__ == &#39;__main__&#39;</code>结果为假，就是不调用对应的方法。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><strong>调试代码</strong>的时候，在<code>if __name__ == &#39;__main__&#39;</code>中加入一些我们的调试代码，我们可以让外部模块调用的时候不执行我们的调试代码，但是如果我们想排查问题的时候，直接执行该模块文件，调试代码能够正常运行！</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/08/git/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -244,7 +243,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        4
                     </p>
                 </div>
             </div>
@@ -254,7 +253,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        11
                     </p>
                 </div>
             </div>
@@ -358,22 +357,6 @@
                 <span class="level-item tag">18</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Linux/">
-            <span class="level-start">
-                <span class="level-item">Linux</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/git使用/">
-            <span class="level-start">
-                <span class="level-item">git使用</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/心得体会/">
             <span class="level-start">
                 <span class="level-item">心得体会</span>
@@ -400,7 +383,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/调研/" style="font-size: 10px;">调研</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/算法/" style="font-size: 16.67px;">算法</a> <a href="/tags/调研/" style="font-size: 10px;">调研</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
     </div>
 </div>
     
@@ -417,14 +400,14 @@
             
             <a href="/2019/10/29/python的主函数main的作用/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T08:37:50.850Z">2019-10-29</time></div>
-                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -436,14 +419,14 @@
             
             <a href="/2019/10/28/Linux安装MySQL/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T09:04:49.709Z">2019-10-28</time></div>
-                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -474,14 +457,14 @@
             
             <a href="/2019/10/25/剑指offer/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T11:22:38.059Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -493,14 +476,14 @@
             
             <a href="/2019/10/25/快速幂/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T04:29:27.414Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -582,6 +565,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Spring/">
+                        <span class="tag">Spring</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -590,6 +587,20 @@
                     <a class="tags has-addons" href="/tags/git/">
                         <span class="tag">git</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/算法/">
+                        <span class="tag">算法</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -603,6 +614,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/面试/">
                         <span class="tag">面试</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/项目/">
+                        <span class="tag">项目</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -633,14 +651,14 @@
             
             <a href="/2019/10/29/python的主函数main的作用/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T08:37:50.850Z">2019-10-29</time></div>
-                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -652,14 +670,14 @@
             
             <a href="/2019/10/28/Linux安装MySQL/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T09:04:49.709Z">2019-10-28</time></div>
-                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -690,14 +708,14 @@
             
             <a href="/2019/10/25/剑指offer/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T11:22:38.059Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -709,14 +727,14 @@
             
             <a href="/2019/10/25/快速幂/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[object Object]">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T04:29:27.414Z">2019-10-25</time></div>
-                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
+                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[object Object]</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -798,6 +816,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Spring/">
+                        <span class="tag">Spring</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -806,6 +838,20 @@
                     <a class="tags has-addons" href="/tags/git/">
                         <span class="tag">git</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/算法/">
+                        <span class="tag">算法</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -819,6 +865,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/面试/">
                         <span class="tag">面试</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/项目/">
+                        <span class="tag">项目</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
