@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Archives - 姣姣的个人主页</title>
+<title>Chapter 52 打印流 - 姣姣的个人主页</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="姣姣的个人主页">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+    <meta name="description" content="使用打印流支持各种数据类型的输出">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 52 打印流">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/Java-52-打印流/index.html">
 <meta property="og:site_name" content="姣姣的个人主页">
+<meta property="og:description" content="使用打印流支持各种数据类型的输出">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2018-11-07T06:09:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="姣姣的个人主页">
+<meta name="twitter:title" content="Chapter 52 打印流">
+<meta name="twitter:description" content="使用打印流支持各种数据类型的输出">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -76,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="姣姣的个人主页" height="28">
+                <img src="/images/logo.png" alt="Chapter 52 打印流" height="28">
             
             </a>
         </div>
@@ -126,237 +131,105 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-14T01:46:31.363Z">2019-10-14</time>
-                        <a href="/2019/10/14/工作经验/" class="title has-link-black-ter is-size-6 has-text-weight-normal">面试经验</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
                 </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-13T07:35:23.893Z">2019-10-13</time>
-                        <a href="/2019/10/13/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 806 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Chapter 52 打印流
+            
+        </h1>
+        <div class="content">
+            <p>使用打印流支持各种数据类型的输出</p>
+<a id="more"></a>
+
+<h3 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h3><h4 id="1-问题引出"><a href="#1-问题引出" class="headerlink" title="1. 问题引出"></a>1. 问题引出</h4><p>OutputStream 输出 String 类需要将 String 类变为 字节数据（getBytes），int、double 类型都需要转换成 String 然后再变为字节数据。<br><strong>示例</strong>：创建一个类，支持各种数据类型的输出</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrintUtil</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> OutputStream output;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PrintUtil</span><span class="hljs-params">(OutputStream output)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.output = output;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.print(String.valueOf(x));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(String x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.output.write(x.getBytes());</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.print(String.valueOf(x));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">println</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.println(String.valueOf(x));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">println</span><span class="hljs-params">(String x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.print(x.concat(<span class="hljs-string">"\n"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">println</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.println(String.valueOf(x));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123; <span class="hljs-comment">// 处理异常</span></span><br><span class="line">        PrintUtil pu = <span class="hljs-keyword">new</span> PrintUtil(<span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">"."</span> + File.separator + <span class="hljs-string">"testA.txt"</span>));</span><br><span class="line">        pu.print(<span class="hljs-number">5</span>);</span><br><span class="line">        pu.print(<span class="hljs-number">5.5</span>);</span><br><span class="line">        pu.print(<span class="hljs-string">"Hello"</span>);</span><br><span class="line">        pu.println(<span class="hljs-string">""</span>);</span><br><span class="line">        pu.println(<span class="hljs-number">5</span>);</span><br><span class="line">        pu.println(<span class="hljs-number">5.5</span>);</span><br><span class="line">        pu.println(<span class="hljs-string">"Hello"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-打印流"><a href="#2-打印流" class="headerlink" title="2. 打印流"></a>2. 打印流</h4><p>为了解决输出数据时功能不足，java.io 提供了一套用于数据输出的类：PrintStream（打印字节流），PrintWriter（打印字符流）。<br>这两个类除类名称不一样，方法是一样的，以 PrintStream 类为例，观察一下这个类的继承与构造方法：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">    |- java.io.OutputStream</span><br><span class="line">        |- java.io.FilterOutputStream</span><br><span class="line">            |- java.io.PrintStream</span><br></pre></td></tr></table></figure>
+
+<p>构造方法：<code>public PrintStream(OutputStream out)</code></p>
+<p><img src="Image_Java_52_%E6%89%93%E5%8D%B0%E6%B5%81/2018-10-21-20-36-53.png" alt></p>
+<p>在 PrintStream 类中，提供了一系列 print() 和 println() 方法，这些方法支持各种数据类型的输出，如果使用 PrintStream 就不需要使用 write() 方法。但本质依然是根据 OutputStream 类的方法完成的。<br>这种设计模式成为<em>装饰设计</em>模式，相当于将一个功能不足的操作类，通过某些类的装饰，形成更好用的工具类。<br><strong>示例</strong>：使用 PrintStream</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123; <span class="hljs-comment">// 处理异常</span></span><br><span class="line">        PrintStream pu = <span class="hljs-keyword">new</span> PrintStream(<span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">"."</span> + File.separator + <span class="hljs-string">"testA.txt"</span>));</span><br><span class="line">        pu.print(<span class="hljs-number">5</span>);</span><br><span class="line">        pu.print(<span class="hljs-number">5.5</span>);</span><br><span class="line">        pu.print(<span class="hljs-string">"Hello"</span>);</span><br><span class="line">        pu.println(<span class="hljs-string">""</span>);</span><br><span class="line">        pu.println(<span class="hljs-number">5</span>+<span class="hljs-number">2</span>);</span><br><span class="line">        pu.println(<span class="hljs-number">5.5</span>+<span class="hljs-number">1.33</span>);</span><br><span class="line">        pu.println(<span class="hljs-string">"Hello"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在以后的开发过程中，只要是程序输出内容，都采用打印流的模式，但要记住，打印流需要 OutputStream 类支持的。</p>
+<h4 id="3-JDK-1-5-改进"><a href="#3-JDK-1-5-改进" class="headerlink" title="3. JDK 1.5 改进"></a>3. JDK 1.5 改进</h4><ol>
+<li><p>所有的输出数据都要求使用打印流输出，JDK 1.5 增加了新的输出：格式化输出：<br><code>public PrintStream printf(String format,Object... args)</code><br>如果需要格式化输出就需要一些标记：整数（%d），字符串（%s），字符（%c），小数（%m.nf）</p>
+<p> <strong>示例</strong>：格式化输出【了解】</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123; <span class="hljs-comment">// 处理异常</span></span><br><span class="line">        String name = <span class="hljs-string">"Mary"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;</span><br><span class="line">        <span class="hljs-keyword">double</span> score = <span class="hljs-number">59.89</span>;</span><br><span class="line">        PrintStream pu = <span class="hljs-keyword">new</span> PrintStream(<span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">"."</span> + File.separator + <span class="hljs-string">"testA.txt"</span>));</span><br><span class="line">        pu.printf(<span class="hljs-string">"姓名：%s \n年龄：%d\n成绩：%.2f"</span>,name,age,score);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JDK 1.5 之后 String 的改进<br>String 定义了一个新的功能：格式化字符串<br><code>public static String format(String format,Object... args)</code>  </p>
+</li>
+</ol>
+<p><strong>示例</strong>：格式化字符串</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123; <span class="hljs-comment">// 处理异常</span></span><br><span class="line">        String name = <span class="hljs-string">"Mary"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> age = <span class="hljs-number">18</span>;</span><br><span class="line">        <span class="hljs-keyword">double</span> score = <span class="hljs-number">59.89</span>;</span><br><span class="line">        String str = String.format(<span class="hljs-string">"姓名：%s \n年龄：%d\n成绩：%.2f"</span>,name,age,score);</span><br><span class="line">        System.out.printf(str);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>String 类的核心功能讲解完成啦。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>
 
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2018
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Linux常用命令/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux 常用命令</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-58-DAO设计模式-分层设计思想/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 58 DAO设计模式_分层设计思想</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-57-Java数据库编程-JDBC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 57 类集框架</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 学习笔记</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Hexo-入门/">Hexo 入门</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-56-类集框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 56 类集框架</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-42-Java基础类库/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 42 Java 基础类库</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-38-41-线程常用方法与实战/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 38-41 线程常用操作方法</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-45-比较器/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 45 比较器</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-        </div>
-    </div>
-</div>
 
-    
 
-    
+
+
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/24/Java-53-System对IO的支持/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Chapter 53 System 类对 IO 的支持</span>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/page/3/">Next</a>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/10/24/Java-54-IO高级应用/">
+                <span class="level-item">Chapter 54 IO 高级应用</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/archives/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/4/">4</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -1061,7 +934,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="姣姣的个人主页" height="28">
+                    <img src="/images/logo.png" alt="Chapter 52 打印流" height="28">
                 
                 </a>
                 <p class="is-size-7">

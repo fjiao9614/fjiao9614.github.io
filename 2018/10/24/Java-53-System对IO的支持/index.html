@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Archives - 姣姣的个人主页</title>
+<title>Chapter 53 System 类对 IO 的支持 - 姣姣的个人主页</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="姣姣的个人主页">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+    <meta name="description" content="在 System 类里面为了支持 IO 操作专门提供有三个常量：错误输出、输出到标准输出设备（显示器）、从标准输入设备读取（键盘）等基础实现和用法">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 53 System 类对 IO 的支持">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/Java-53-System对IO的支持/index.html">
 <meta property="og:site_name" content="姣姣的个人主页">
+<meta property="og:description" content="在 System 类里面为了支持 IO 操作专门提供有三个常量：错误输出、输出到标准输出设备（显示器）、从标准输入设备读取（键盘）等基础实现和用法">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2018-10-25T02:00:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="姣姣的个人主页">
+<meta name="twitter:title" content="Chapter 53 System 类对 IO 的支持">
+<meta name="twitter:description" content="在 System 类里面为了支持 IO 操作专门提供有三个常量：错误输出、输出到标准输出设备（显示器）、从标准输入设备读取（键盘）等基础实现和用法">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -76,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="姣姣的个人主页" height="28">
+                <img src="/images/logo.png" alt="Chapter 53 System 类对 IO 的支持" height="28">
             
             </a>
         </div>
@@ -126,237 +131,109 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-14T01:46:31.363Z">2019-10-14</time>
-                        <a href="/2019/10/14/工作经验/" class="title has-link-black-ter is-size-6 has-text-weight-normal">面试经验</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/心得体会/">心得体会</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
                 </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-13T07:35:23.893Z">2019-10-13</time>
-                        <a href="/2019/10/13/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 915 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Chapter 53 System 类对 IO 的支持
+            
+        </h1>
+        <div class="content">
+            <p>在 System 类里面为了支持 IO 操作专门提供有三个常量：错误输出、输出到标准输出设备（显示器）、从标准输入设备读取（键盘）等基础实现和用法</p>
+<a id="more"></a>
+
+<h3 id="System-类对-IO-的支持（了解）"><a href="#System-类对-IO-的支持（了解）" class="headerlink" title="System 类对 IO 的支持（了解）"></a>System 类对 IO 的支持（了解）</h3><h4 id="1-输出"><a href="#1-输出" class="headerlink" title="1. 输出"></a>1. 输出</h4><p>在 System 类里面为了支持 IO 操作专门提供有三个常量：</p>
+<ul>
+<li>错误输出：<code>public static final PrintStream err;</code> </li>
+<li>输出到标准输出设备（显示器）：<code>public static final PrintStream out;</code></li>
+<li>从标准输入设备读取（键盘）：<code>public static final InputStream in;</code></li>
+</ul>
+<p>1.1 错误输出（没用）</p>
+<p>System.err 是 PrintStream 的类，此类专门进行错误信息的输出操作：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">            Integer.parseInt(<span class="hljs-string">"abc"</span>);</span><br><span class="line">        &#125;<span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            <span class="hljs-comment">// 两个输出一样，颜色不一样：</span></span><br><span class="line">            <span class="hljs-comment">// java.lang.NumberFormatException: For input string: "abc"</span></span><br><span class="line">            System.err.println(e);</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>严格来讲，System.err 和 System.out 输出的错误是一样的，System.err 输出不让用户看到的错误信息，System.out 输出可以让用户看到的信息，但是现在已经不做区分了。</p>
+<p>1.2 信息输出（System.out）</p>
+<p>System.out 是 Java 中专门准备的支持屏幕输出信息的操作对象（此对象由系统负责实例化），使用 Sytem.out 实现一个简单的输出操作<br>System.out 是 PrintStream 的对象， PrintStream 是 OutputStream 的子类，因此<br><strong>示例</strong>使用 OutputStream 进行屏幕输出</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// OutputStream 变为了屏幕输出</span></span><br><span class="line">        OutputStream out = System.out;</span><br><span class="line">        <span class="hljs-comment">// 屏幕输出</span></span><br><span class="line">        out.write(<span class="hljs-string">"Hello, world!"</span>.getBytes()); </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码，体现了 Java 的多态性。根据实例化子类的不同，选择不同的方法。<br>结合 JDK 1.8 的函数式功能接口，它可以为消费型函数式接口做方法引用。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.function.Consumer;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> </span>&#123;</span><br><span class="line">        Consumer&lt;String&gt; con = System.out :: println;</span><br><span class="line">        <span class="hljs-comment">// 屏幕输出</span></span><br><span class="line">        con.accept(<span class="hljs-string">"Hello, world!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Java 系统里，System.out 是系统默认提供好的实例化对象，不需要用户进行明确的实例化操作。但是文件、内存需要进行明确的实例化操作。</p>
+<h4 id="2-系统输入-System-in（不使用）"><a href="#2-系统输入-System-in（不使用）" class="headerlink" title="2. 系统输入 System.in（不使用）"></a>2. 系统输入 System.in（不使用）</h4><p>Java 类中有一个 in 的对象，类型为 InputStream。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InputStream in =  System.in;</span><br><span class="line">        <span class="hljs-keyword">byte</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];</span><br><span class="line">        System.out.println(<span class="hljs-string">"请输入数据："</span>);</span><br><span class="line">        <span class="hljs-keyword">int</span> len = in.read(data);</span><br><span class="line">        System.out.println(<span class="hljs-string">"输入的数据为："</span> + <span class="hljs-keyword">new</span> String(data,<span class="hljs-number">0</span>,len) );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与之前最大的不同，只是更换了一个实例化对象。存在的问题：超过数组长度的数据将不会被保存。<br>想办法解决长度限制：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] agrs)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InputStream in =  System.in;</span><br><span class="line">        StringBuffer buf = <span class="hljs-keyword">new</span> StringBuffer();</span><br><span class="line">        System.out.println(<span class="hljs-string">"请输入数据："</span>);</span><br><span class="line">        <span class="hljs-keyword">int</span> temp = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>((temp = in.read()) != -<span class="hljs-number">1</span>)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(temp == <span class="hljs-string">'\n'</span>)&#123;</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            buf.append((<span class="hljs-keyword">char</span>)temp);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="hljs-string">"输入的数据为："</span> + buf );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上操作虽然没有了长度限制，但是依然无法使用，输入中文时成为乱码。一个中文两个字符，四个字节。</p>
+<h4 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h4><p>System 类对于 IO 的各种操作并不会经常使用到，唯一可以使用到的也是 System.out.println() 之类的方法，对于此部分需要清楚一点：System.out 使用的是 PrintStream类对象进行标准输出设备的显示的。</p>
+<p>【<em>遗留问题</em>】：中文怎么输入？ </p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>
 
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2018
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Linux常用命令/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux 常用命令</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-58-DAO设计模式-分层设计思想/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 58 DAO设计模式_分层设计思想</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-57-Java数据库编程-JDBC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 57 类集框架</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo 学习笔记</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Hexo-入门/">Hexo 入门</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
-                        <a href="/2018/11/05/Java-56-类集框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 56 类集框架</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-42-Java基础类库/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 42 Java 基础类库</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-38-41-线程常用方法与实战/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 38-41 线程常用操作方法</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-10-23T16:00:00.000Z">2018-10-24</time>
-                        <a href="/2018/10/24/Java-45-比较器/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Chapter 45 比较器</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-        </div>
-    </div>
-</div>
 
-    
 
-    
+
+
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/24/Java-50-字节流与字符流/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Chapter 50 字节流与字符流</span>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/page/3/">Next</a>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/10/24/Java-52-打印流/">
+                <span class="level-item">Chapter 52 打印流</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/archives/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/4/">4</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -1061,7 +938,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="姣姣的个人主页" height="28">
+                    <img src="/images/logo.png" alt="Chapter 53 System 类对 IO 的支持" height="28">
                 
                 </a>
                 <p class="is-size-7">
