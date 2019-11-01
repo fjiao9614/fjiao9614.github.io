@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Chapter 57 类集框架 - 姣姣的个人主页</title>
+
+
+    <meta name="description" content="Java 数据库编程，JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 57 类集框架">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/Java_57_Java数据库编程_JDBC/index.html">
+<meta property="og:site_name" content="姣姣的个人主页">
+<meta property="og:description" content="Java 数据库编程，JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2018-11-07T05:57:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 57 类集框架">
+<meta name="twitter:description" content="Java 数据库编程，JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="Chapter 57 类集框架" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/fjiao9614/fjiao9614.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-04T16:00:00.000Z">2018-11-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java8-编程开发入门笔记/">Java8 编程开发入门笔记</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    28 minutes read (About 4132 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Chapter 57 类集框架
+            
+        </h1>
+        <div class="content">
+            <p>Java 数据库编程，JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。<br>数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。</p>
+<a id="more"></a>
+
+
+<h3 id="Java-数据库编程（JDBC）"><a href="#Java-数据库编程（JDBC）" class="headerlink" title="Java 数据库编程（JDBC）"></a>Java 数据库编程（JDBC）</h3><h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>所有的服务都是固定的流程，属于应用。</p>
+<p>JDBC（Java Database Connective），Java 数据库连接技术。Java 提供的一组与平台无关的数据库的操作标准，是一组接口的组成。</p>
+<p>数据库属于资源操作，所以所有的数据库操作的最后必须要关闭数据库连接。</p>
+<p>四种 Java 数据库的操作方式：  </p>
+<ul>
+<li>形式一：JDBC-ODBC 桥接技术（100%不用）</li>
+<li>形式二：JDBC 直接连接，性能最好，但是支持的 JDBC 版本有限<ul>
+<li>直接由不同的数据库生产商提供指定的数据库连接驱动程序（实现了 Java 的数据库操作标准的一群类）</li>
+</ul>
+</li>
+<li>形式三：JDBC 网络连接<ul>
+<li>使用专门的数据库的网络连接指令进行指定主机的数据库操作。</li>
+</ul>
+</li>
+<li>形式四：模拟制定数据库的通讯协议自己编写数据库操作</li>
+</ul>
+<h4 id="2-连接-mysql-数据库"><a href="#2-连接-mysql-数据库" class="headerlink" title="2. 连接 mysql 数据库"></a>2. 连接 mysql 数据库</h4><h4 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h4><p>在 Java 之中，所有数据库操作的类和接口都保存在 java.sql 包</p>
+<ul>
+<li>一个类：DriverManager 类；</li>
+<li>四个接口：Connection、Statement、ResultSet、PreparedStatement。</li>
+</ul>
+<p>所有的 JDBC 连接数据库的操作流程都是固定的，按照如下的几步完成：</p>
+<ol>
+<li>加载数据库的驱动程序（向容器加载）；</li>
+<li>进行数据库连接（通过 DriverManager 类完成，Connection 表示连接）；</li>
+<li>进行数据的 CRUD（Statement、PreparedStatement，ResultSet）；</li>
+<li>关闭数据库操作以及连接（直接关闭连接就可以）</li>
+</ol>
+<ul>
+<li>mysql 程序驱动类：<code>com.mysql.jdbc.Driver</code>。</li>
+<li>加载类使用：<code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</code></li>
+</ul>
+<h4 id="二、连接数据库"><a href="#二、连接数据库" class="headerlink" title="二、连接数据库"></a>二、连接数据库</h4><p>如果想要连接数据库需要提供如下的几个信息（前提：数据库服务要打开）：</p>
+<ul>
+<li>数据库的连接地址：jdbc:mysql:主机名称:端口名称:数据库的SID<ul>
+<li>连接本机的 test 数据库：<code>jdbc:mysql://localhost:3306/test</code></li>
+</ul>
+</li>
+<li>数据库的用户名：root</li>
+<li>数据库的密码：admin</li>
+</ul>
+<p>要连接数据库必须依靠 DriverManager 类完成，在此类定义有如下方法：</p>
+<ul>
+<li>连接数据库：<code>public static Connection getConnection(String url,String user,String password) throws Exception</code></li>
+</ul>
+<p>在 JDBC 里面，每一个数据库连接都要求使用一个 Connection 对象进行封装，所以只要有一个新的 Connection 就表示要连接一次数据库。</p>
+<h4 id="四、关闭数据库"><a href="#四、关闭数据库" class="headerlink" title="四、关闭数据库"></a>四、关闭数据库</h4><p>Connection 接口提供有 close() 方法：<code>public void close() throws SQLException</code> </p>
+<p><strong>示例</strong>：mysql 数据的连接</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// JDBC 驱动名及数据库 URL</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String JDBC_DRIVER = <span class="hljs-string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DB_URL = <span class="hljs-string">"jdbc:mysql://localhost:3306/test"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 数据库的用户名与密码，需要根据自己的设置</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String USER = <span class="hljs-string">"root"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String PASS = <span class="hljs-string">"admin"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 输出不为空则证明连接成功 com.mysql.jdbc.JDBC4Connection@1de0aca6</span></span><br><span class="line">        System.out.println(conn);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 JDBC 操作中，在驱动数据库连接对象时，采用的是工厂设计模式，而DriverManagement 就是一个工厂类，那么我们客户端调用的时候会完全隐藏具体的实现子类。</p>
+<p><img src="Java_57_Java%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B_JDBC/2018-10-26-09-29-26.png" alt></p>
+<p><strong>总结</strong>：</p>
+<ol>
+<li>以后不管连接何种关系型数据库，都一定要通过 DriverManager 进行数据库连接；</li>
+<li>每一个 Connection 接口对象就表示一个数据库连接，程序的最后必须关闭数据连接。</li>
+</ol>
+<h4 id="3-Statement接口"><a href="#3-Statement接口" class="headerlink" title="3. Statement接口"></a>3. Statement接口</h4><p>mysql 数据库密码：admin</p>
+<p>创建表：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS member(</span><br><span class="line">    mid     INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">    name    VARCHAR(20),</span><br><span class="line">    birthday DATE,</span><br><span class="line">    age     INT,</span><br><span class="line">    note    VARCHAR(100),</span><br><span class="line">    PRIMARY KEY(mid)</span><br><span class="line">)DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<p>数据的更新操作最关键性的问题是每次更新完成之后都一定回返回影响的数据行数：</p>
+<p><strong>范例</strong>：数据增加</p>
+<ul>
+<li>INSERT INTO 表名称 (列,列,…) VALUES(值,值,…);</li>
+</ul>
+<p><strong>范例</strong>：数据更新</p>
+<ul>
+<li>UPDATE 表名称 SET 字段=值，… WHERE 更新条件(s);</li>
+</ul>
+<p><strong>范例</strong>：数据删除</p>
+<ul>
+<li>DELETE FROM 表名称 WHERE 删除条件(s);</li>
+</ul>
+<p>插入、更新、删除：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO member(name,birthday,age,note) VALUES(&quot;张三&quot;,&apos;1998-08-16&apos;,20,&quot;一个人&quot;)</span><br><span class="line"></span><br><span class="line">UPDATE member SET name=&apos;李四&apos;,birthday=NOW(),age=0 WHERE mid IN(8,9,10)</span><br><span class="line"></span><br><span class="line">DELETE FROM member WHERE mid IN(1,5)</span><br></pre></td></tr></table></figure>
+
+<p>插入中文数据要注意：在数据库 URL 后面添加<code>?characterEncoding=UTF-8</code><br>否则中文会出现乱码。</p>
+<p><strong>示例</strong>：插入一条数据</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.Statement;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// JDBC 驱动名及数据库 URL</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String JDBC_DRIVER = <span class="hljs-string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DB_URL = <span class="hljs-string">"jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 数据库的用户名与密码，需要根据自己的设置</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String USER = <span class="hljs-string">"root"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String PASS = <span class="hljs-string">"admin"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 第三步：进行数据库的数据操作</span></span><br><span class="line">        Statement stmt = conn.createStatement();</span><br><span class="line">        <span class="hljs-comment">// 在编写 SQL 语句时，太长了需要换行时，请一定要在前后加上空格</span></span><br><span class="line">        String sql = <span class="hljs-string">" INSERT INTO member(name,birthday,age,note) VALUES "</span> +</span><br><span class="line">                <span class="hljs-string">" ('张三','1998-08-16',20,'一个人') "</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> len = stmt.executeUpdate(sql);  <span class="hljs-comment">// 执行SQL 返回更新的数据行</span></span><br><span class="line">        System.out.println(<span class="hljs-string">"影响的数据行："</span> + len);</span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        stmt.close();   <span class="hljs-comment">// 是可选的 无用的</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="Java_57_Java%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B_JDBC/2018-11-01-17-07-14.png" alt></p>
+<p>在 ResultSet 接口里面定义了如下的方法：</p>
+<ul>
+<li>向下移动指针并判断是否有数据行：<code>public boolean next() throws SQLException</code><ul>
+<li>移动之后就可以直接取得当前数据行中所有数据列的内容了</li>
+</ul>
+</li>
+<li>取出数据列的内容：getInt()、getDouble()、getString()、getDate()。</li>
+</ul>
+<p><strong>范例</strong>：实现数据的查询<br>查询时不要写 <code>SELECT *</code>，写出查询的具体内容。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="hljs-string">"SELECT mid,name,age,birthday,note FROM member"</span>;</span><br><span class="line">        ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">        <span class="hljs-keyword">while</span>(rs.next())&#123;   <span class="hljs-comment">// 循环取出返回的每一行数据</span></span><br><span class="line">            <span class="hljs-keyword">int</span> mid = rs.getInt(<span class="hljs-string">"mid"</span>);</span><br><span class="line">            String name = rs.getString(<span class="hljs-string">"name"</span>);</span><br><span class="line">            <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-string">"age"</span>);</span><br><span class="line">            Date birthday = rs.getDate(<span class="hljs-string">"birthday"</span>);</span><br><span class="line">            String note = rs.getString(<span class="hljs-string">"note"</span>);</span><br><span class="line">            System.out.println(mid + <span class="hljs-string">","</span> + name + <span class="hljs-string">","</span> + age + <span class="hljs-string">","</span> + birthday + <span class="hljs-string">","</span> + note);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>关于 ResultSet 的使用有以下几点忠告：</p>
+<ul>
+<li>在使用 getXxx() 取出列数据的时候，强烈建议按照给定的顺序取；</li>
+<li>在每一个列的数据只能够按照顺序取一次；</li>
+</ul>
+<p>以上的代码在 SQL 语句中给出了列名称了，那么可以按照序号取出。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="hljs-string">"SELECT mid,name,age,birthday,note FROM member"</span>;</span><br><span class="line">        ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">        <span class="hljs-keyword">while</span>(rs.next())&#123;   <span class="hljs-comment">// 循环取出返回的每一行数据</span></span><br><span class="line">            <span class="hljs-keyword">int</span> mid = rs.getInt(<span class="hljs-number">1</span>);</span><br><span class="line">            String name = rs.getString(<span class="hljs-number">2</span>);</span><br><span class="line">            <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-number">3</span>);</span><br><span class="line">            Date birthday = rs.getDate(<span class="hljs-number">4</span>);</span><br><span class="line">            String note = rs.getString(<span class="hljs-number">5</span>);</span><br><span class="line">            System.out.println(mid + <span class="hljs-string">","</span> + name + <span class="hljs-string">","</span> + age + <span class="hljs-string">","</span> + birthday + <span class="hljs-string">","</span> + note);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-PreparedStatement接口"><a href="#4-PreparedStatement接口" class="headerlink" title="4. PreparedStatement接口"></a>4. PreparedStatement接口</h4><p>Statement 如果想要变为灵活的应用，那么就必须采用拼凑字符串的方式完成，可是如果输入的内容有 <code>&#39;</code>，那么整个 SQL 就会出错，也就是说 Statement 的执行模式不适合于处理一些敏感字符。</p>
+<p>Statement 执行关键性的问题是在与它需要一个完整的字符串来定义要使用的 SQL 语句，所以这就导致在使用中需要大量的进行 SQL 的拼凑，而 PreparedStatement 与 Statement 不同的地方在与，它执行的是一个完整的具备特殊占位标记的 SQL 语句，并且可以动态的设置所需要的数据。 </p>
+<p>想要取得 PreparedStatement 这个子接口的实例化对象，依然需要使用 Connection 接口提供的方法：<br><code>public PreparedStatement prepareStatement(String sql) throws SQLException</code>，里面在执行的时候需要一个 SQL 语句，这个 SQL 一个具备特殊标记的完整 SQL，此时没有内容，当取得了 PreparedStatement 接口对象，需要使用一系列的 setXxx() 方法用于为使用的标记设置具体内容，而后对于执行操作有两个方法支持：</p>
+<ul>
+<li>更新操作：<code>public int executeUpdate() throws SQLException;</code></li>
+<li>查询操作：<code>public ResultSet executeQuery() throws SQLException</code></li>
+</ul>
+<p>当使用了 PreparedStatement 接口操作时需要注意的是里面的 setDate() 方法，使用的是  java.sql.date 不再是 java.util.Date。</p>
+<p>在 java.util.Date 类下有三个子类都是在 java.sql 包中的：</p>
+<ul>
+<li>java.sql.Date：描述的是日期；</li>
+<li>java.sql.Time：描述的是时间；</li>
+<li>java.sql.TimeStamp：描述的是时间戳（日期时间）</li>
+</ul>
+<p>如果要将 java.util.Date 变为 java.sql.Date（Time、Timestamp）只能依靠 long 型：</p>
+<ul>
+<li>java.util.Date：<code>public long getTime()</code>，可以将 Date 变为 long；</li>
+<li>java.sql.Date：<code>public Date(long date)</code>，将 long 变为 sql.Date</li>
+<li>sql.Date 可以向上转型为 util.Date，例如：<code>Date birthday = rs.getDate(3);</code></li>
+</ul>
+<p><strong>示例</strong>：使用 PreparedStatement</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String name = <span class="hljs-string">"Mr'Smith"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> age = <span class="hljs-number">30</span>;</span><br><span class="line">        Date birthday = <span class="hljs-keyword">new</span> Date();</span><br><span class="line">        System.out.println(birthday);</span><br><span class="line">        String note= <span class="hljs-string">"外国人"</span>;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 第三步：进行数据库的数据操作</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 在编写 SQL 语句时，太长了需要换行时，请一定要在前后加上空格</span></span><br><span class="line">        String sql = <span class="hljs-string">" INSERT INTO member(name,birthday,age,note) VALUES (?,?,?,?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,name);</span><br><span class="line">        stmt.setDate(<span class="hljs-number">2</span>,<span class="hljs-keyword">new</span> java.sql.Date(birthday.getTime()));</span><br><span class="line">        stmt.setInt(<span class="hljs-number">3</span>,age);</span><br><span class="line">        stmt.setString(<span class="hljs-number">4</span>,note);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> len = stmt.executeUpdate();</span><br><span class="line">        System.out.println(<span class="hljs-string">"影响的行数："</span>+len);</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        stmt.close();   <span class="hljs-comment">// 是可选的 无用的</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：查询操作</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 第三步：进行数据库的数据操作</span></span><br><span class="line">        <span class="hljs-comment">// 在编写 SQL 语句时，太长了需要换行时，请一定要在前后加上空格</span></span><br><span class="line">        String sql = <span class="hljs-string">"SELECT mid,name,birthday,age,note FROM member ORDER BY mid"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        ResultSet rs = stmt.executeQuery();</span><br><span class="line">        <span class="hljs-keyword">while</span>(rs.next())&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> mid = rs.getInt(<span class="hljs-number">1</span>);</span><br><span class="line">            String name = rs.getString(<span class="hljs-number">2</span>);</span><br><span class="line">            Date birthday = rs.getDate(<span class="hljs-number">3</span>);</span><br><span class="line">            <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-number">4</span>);</span><br><span class="line">            String note = rs.getString(<span class="hljs-number">5</span>);</span><br><span class="line">            System.out.println(mid + <span class="hljs-string">","</span> + name + <span class="hljs-string">","</span> + birthday + <span class="hljs-string">","</span> + age + <span class="hljs-string">","</span> + note);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        stmt.close();   <span class="hljs-comment">// 是可选的 无用的</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：模糊查询操作，设定关键词</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String keywords = <span class="hljs-string">"李"</span>;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 第三步：进行数据库的数据操作</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 在编写 SQL 语句时，太长了需要换行时，请一定要在前后加上空格</span></span><br><span class="line">        String sql = <span class="hljs-string">"SELECT mid,name,birthday,age,note FROM member WHERE name LIKE ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"%"</span> + keywords + <span class="hljs-string">"%"</span>);</span><br><span class="line">        ResultSet rs = stmt.executeQuery();</span><br><span class="line">        <span class="hljs-keyword">while</span>(rs.next())&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> mid = rs.getInt(<span class="hljs-number">1</span>);</span><br><span class="line">            String name = rs.getString(<span class="hljs-number">2</span>);</span><br><span class="line">            Date birthday = rs.getDate(<span class="hljs-number">3</span>);</span><br><span class="line">            <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-number">4</span>);</span><br><span class="line">            String note = rs.getString(<span class="hljs-number">5</span>);</span><br><span class="line">            System.out.println(mid + <span class="hljs-string">","</span> + name + <span class="hljs-string">","</span> + birthday + <span class="hljs-string">","</span> + age + <span class="hljs-string">","</span> + note);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        stmt.close();   <span class="hljs-comment">// 是可选的 无用的</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果 keyword = <code>&quot;&quot;</code>;<br>那么匹配全部内容，与直接查询的不同：直接查询不需要判断，直接返回数据。设置条件的查询速度很慢。</p>
+<p><strong>示例</strong>：分页显示</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 在编写 SQL 语句时，太长了需要换行时，请一定要在前后加上空格</span></span><br><span class="line"><span class="hljs-comment">// LIMIT 第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目。</span></span><br><span class="line">String sql = <span class="hljs-string">"SELECT * FROM ("</span> +</span><br><span class="line">        <span class="hljs-string">" SELECT mid,name,birthday,age,note FROM member "</span> +</span><br><span class="line">        <span class="hljs-string">" WHERE name LIKE ?)"</span> +</span><br><span class="line">        <span class="hljs-string">" as total LIMIT ?,?"</span>;</span><br><span class="line">PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"%"</span> + keywords + <span class="hljs-string">"%"</span>);</span><br><span class="line">stmt.setInt(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);</span><br><span class="line">stmt.setInt(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>);</span><br><span class="line">ResultSet rs = stmt.executeQuery();</span><br><span class="line"><span class="hljs-keyword">while</span>(rs.next())&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = rs.getInt(<span class="hljs-number">1</span>);</span><br><span class="line">    String name = rs.getString(<span class="hljs-number">2</span>);</span><br><span class="line">    Date birthday = rs.getDate(<span class="hljs-number">3</span>);</span><br><span class="line">    <span class="hljs-keyword">int</span> age = rs.getInt(<span class="hljs-number">4</span>);</span><br><span class="line">    String note = rs.getString(<span class="hljs-number">5</span>);</span><br><span class="line">    System.out.println(mid + <span class="hljs-string">","</span> + name + <span class="hljs-string">","</span> + birthday + <span class="hljs-string">","</span> + age + <span class="hljs-string">","</span> + note);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：统计数据量，使用 <code>COUNT()</code> 函数</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String keywords = <span class="hljs-string">"李"</span>;</span><br><span class="line">        <span class="hljs-comment">// 第一步：加载数据库驱动程序，此时不需要实例化，会有容器自己负责管理</span></span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        <span class="hljs-comment">// 第二步：连接数据库</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        <span class="hljs-comment">// 第三步：进行数据库的数据操作</span></span><br><span class="line"></span><br><span class="line">        String sql = <span class="hljs-string">"SELECT COUNT(mid) FROM member WHERE name LIKE ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"%"</span> + keywords + <span class="hljs-string">"%"</span>);</span><br><span class="line">        ResultSet rs = stmt.executeQuery();</span><br><span class="line">        <span class="hljs-keyword">while</span>(rs.next())&#123;   <span class="hljs-comment">// 只返回一行数据</span></span><br><span class="line">            <span class="hljs-keyword">int</span> count = rs.getInt(<span class="hljs-number">1</span>);   <span class="hljs-comment">// 取出第一列</span></span><br><span class="line">            System.out.println(count);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 第四步： 关闭数据库</span></span><br><span class="line">        stmt.close();   <span class="hljs-comment">// 是可选的 无用的</span></span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>开发中不会使用 <code>Statement</code> 只会使用 <code>PreparedStatement</code> 接口。</p>
+<h4 id="4-批处理操作"><a href="#4-批处理操作" class="headerlink" title="4. 批处理操作"></a>4. 批处理操作</h4><p>所谓的批处理指的是一次性向数据库之中发出多条操作命令，一起执行。如果想要操作批处理，还是需要在 Statement 与 PreparedStatement 接口上定义的：</p>
+<ul>
+<li>Statement 接口定义的方法：<ul>
+<li>增加批处理语句：<code>public void addBatch(String sql) throws SQLException</code></li>
+<li>执行批处理：<code>public int executeBatch() throws SQLException</code>，返回的数组是包含了所有批处理语句的执行结果；</li>
+</ul>
+</li>
+<li>PreparedStatement 接口定义的方法：<ul>
+<li>增加批处理：<code>public void addBatch() throws SQLException</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong>：Statement 执行批处理</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> com.company;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> java.sql.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestDemo</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// JDBC 驱动名及数据库 URL</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String JDBC_DRIVER = <span class="hljs-string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DB_URL = <span class="hljs-string">"jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 数据库的用户名与密码，需要根据自己的设置</span></span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String USER = <span class="hljs-string">"root"</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String PASS = <span class="hljs-string">"admin"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        Statement stmt = conn.createStatement();</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试A')"</span>);</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试B')"</span>);</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试C')"</span>);</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试D')"</span>);</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试E')"</span>);</span><br><span class="line">        stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试F')"</span>);</span><br><span class="line">        <span class="hljs-keyword">int</span> result[] = stmt.executeBatch(); <span class="hljs-comment">// 执行批处理</span></span><br><span class="line">        <span class="hljs-comment">// 输出：[1, 1, 1, 1, 1, 1]</span></span><br><span class="line">        System.out.println(Arrays.toString(result));</span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：PreparedStatement 批处理操作</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        String sql = <span class="hljs-string">"INSERT INTO member(name) VALUES (?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="hljs-comment">// 设置 SQL 语句</span></span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"测试AA"</span>);</span><br><span class="line">        <span class="hljs-comment">// 将一组参数添加到此 PreparedStatement 对象的批处理命令中</span></span><br><span class="line">        stmt.addBatch();</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"测试BB"</span>);</span><br><span class="line">        stmt.addBatch();</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"测试CC"</span>);</span><br><span class="line">        stmt.addBatch();</span><br><span class="line">        stmt.setString(<span class="hljs-number">1</span>,<span class="hljs-string">"测试DD"</span>);</span><br><span class="line">        stmt.addBatch();</span><br><span class="line">        <span class="hljs-keyword">int</span> result[] = stmt.executeBatch(); <span class="hljs-comment">// 执行批处理</span></span><br><span class="line">        <span class="hljs-comment">// 输出：[1, 1, 1, 1]</span></span><br><span class="line">        System.out.println(Arrays.toString(result));</span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果假设以上的五条批处理属于一组关联的操作，如果中间有一条语句执行失败，其他的不应该成功。<br>在批处理操作的过程之中，由于 JDBC 具备有自动的事物提交，所以一旦中间的语句出现了错误，那么结果就是错误的。错误前的语句可以正常执行，错误后的语句无法正常执行，这是不应该的。</p>
+<p>可以使用 JDBC 提供的事务处理操作来进行手工的事物控制，所有的操作方法都在 Connection 接口里定义：</p>
+<ul>
+<li>事物提交：<code>public void commit() throws SQLException</code></li>
+<li>事物回滚：<code>public void rollback() throws SQLException</code></li>
+<li>设置是否为自动提交：<code>publiv void setAutoCommit(boolean autoCommit) throws SQLException</code></li>
+</ul>
+<p><strong>示例</strong>：利用事务处理</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Class.forName(JDBC_DRIVER);</span><br><span class="line">        Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);</span><br><span class="line">        Statement stmt = conn.createStatement();</span><br><span class="line">        conn.setAutoCommit(<span class="hljs-keyword">false</span>);  <span class="hljs-comment">// 取消自动提交</span></span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试AAAAACA')"</span>);</span><br><span class="line">            stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES (17，sd)"</span>);</span><br><span class="line">            stmt.addBatch(<span class="hljs-string">"INSERT INTO member(name) VALUES ('测试CCCC')"</span>);</span><br><span class="line">            <span class="hljs-keyword">int</span> result[] = stmt.executeBatch(); <span class="hljs-comment">// 执行批处理</span></span><br><span class="line">            System.out.println(Arrays.toString(result));</span><br><span class="line">            conn.commit();  <span class="hljs-comment">// 如果没有出现异常，则提交</span></span><br><span class="line">        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            conn.rollback();    <span class="hljs-comment">// 如果出现异常，则进行回滚</span></span><br><span class="line">        &#125;</span><br><span class="line">        conn.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>日后容器会帮助我们自动处理，不需要手工处理。</p>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h4><ul>
+<li>掌握批处理的执行操作</li>
+<li>Connection 接口定义了事物的处理方法： setAutoCommit()、commit()、rollback()。</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/05/Hexo/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Hexo 学习笔记</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/05/Java_58_DAO设计模式_分层设计思想/">
+                <span class="level-item">Chapter 58 DAO设计模式_分层设计思想</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="fjiao">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        fjiao
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        姣姣的个人主页
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>BeiJing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        34
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/fjiao9614/fjiao9614.github.io" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/fjiao9614">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/fjiao9614" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Hexo-入门/">
+            <span class="level-start">
+                <span class="level-item">Hexo 入门</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Java8-编程开发入门笔记/">
+            <span class="level-start">
+                <span class="level-item">Java8 编程开发入门笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">18</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/调研报告/">
+            <span class="level-start">
+                <span class="level-item">调研报告</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/算法/" style="font-size: 16.67px;">算法</a> <a href="/tags/调研/" style="font-size: 10px;">调研</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/项目/" style="font-size: 10px;">项目</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/29/python的主函数main的作用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python的主函数main的理解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T08:37:50.850Z">2019-10-29</time></div>
+                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal">python的主函数main的理解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/28/Linux安装MySQL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linux中安装MySQL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T09:04:49.709Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux中安装MySQL</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/28/java中的参数传递类型/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="java参数传递类型的理解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T02:26:30.818Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/java中的参数传递类型/" class="title has-link-black-ter is-size-6 has-text-weight-normal">java参数传递类型的理解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/25/剑指offer/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="剑指offer题目练习">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T11:22:38.059Z">2019-10-25</time></div>
+                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题目练习</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/25/快速幂/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速幂原理及相关算法题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T04:29:27.414Z">2019-10-25</time></div>
+                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速幂原理及相关算法题</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Spring/">
+                        <span class="tag">Spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/算法/">
+                        <span class="tag">算法</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/调研/">
+                        <span class="tag">调研</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/面试/">
+                        <span class="tag">面试</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/项目/">
+                        <span class="tag">项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/29/python的主函数main的作用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python的主函数main的理解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T08:37:50.850Z">2019-10-29</time></div>
+                    <a href="/2019/10/29/python的主函数main的作用/" class="title has-link-black-ter is-size-6 has-text-weight-normal">python的主函数main的理解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/28/Linux安装MySQL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linux中安装MySQL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T09:04:49.709Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Linux安装MySQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linux中安装MySQL</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/28/java中的参数传递类型/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="java参数传递类型的理解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T02:26:30.818Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/java中的参数传递类型/" class="title has-link-black-ter is-size-6 has-text-weight-normal">java参数传递类型的理解</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/25/剑指offer/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="剑指offer题目练习">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T11:22:38.059Z">2019-10-25</time></div>
+                    <a href="/2019/10/25/剑指offer/" class="title has-link-black-ter is-size-6 has-text-weight-normal">剑指offer题目练习</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/25/快速幂/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速幂原理及相关算法题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-25T04:29:27.414Z">2019-10-25</time></div>
+                    <a href="/2019/10/25/快速幂/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速幂原理及相关算法题</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Spring/">
+                        <span class="tag">Spring</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/算法/">
+                        <span class="tag">算法</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/调研/">
+                        <span class="tag">调研</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/面试/">
+                        <span class="tag">面试</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/项目/">
+                        <span class="tag">项目</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="Chapter 57 类集框架" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 fjiao&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/fjiao9614/fjiao9614.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
